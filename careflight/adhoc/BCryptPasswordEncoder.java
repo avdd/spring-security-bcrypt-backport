@@ -16,7 +16,7 @@ implements PasswordEncoder
         return BCrypt.hashpw(rawPass, salt);
     }
 
-    public boolean isPasswordValid(String encPass, String rawPass, Object salt) {
+    public boolean isPasswordValid(String encPass, String rawPass, Object unused) {
         if (encPass == null || encPass.length() == 0)
             return false;
         if (!BCRYPT_PATTERN.matcher(encPass).matches())
